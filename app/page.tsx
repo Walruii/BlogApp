@@ -1,4 +1,3 @@
-// import styles from './page.module.css'
 import Posts from './posts'
 
 export default function Home() {
@@ -13,7 +12,6 @@ export default function Home() {
       </p>
       <h1 className="heading">Posts</h1>
       <Posts />
-
     </>
   )
 }

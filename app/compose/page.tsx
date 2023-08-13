@@ -31,7 +31,7 @@ export default function Compose() {
   }
 
   async function submit() {
-    const response = await fetch('/api/compose', {
+    const response = await fetch('http://localhost:3000/api/compose', {
       method: 'POST',
       body: JSON.stringify(post),
       headers: {

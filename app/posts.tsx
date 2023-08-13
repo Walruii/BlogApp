@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 export interface Post {
   _id: string
   title: string
