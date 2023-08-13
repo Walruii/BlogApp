@@ -1,4 +1,6 @@
+import Link from 'next/link'
 export interface Post {
+  _id: string
   title: string
   content: string;
 }
@@ -18,14 +20,14 @@ export default async function Posts() {
   const posts = await getPosts();
   return (
     <div className="post-content">
-      {posts.map(({ title, content }: Post) => {
+      {posts.map(({ _id, title, content }: Post) => {
         return (
           <div>
             <h1 className="post-title">{title}</h1>
             {content.length < 100 ? (
               <p className="post-content">{content}</p>
             ) : (
-              <p className="post-content">{content.slice(0, 100)}</p>
+              <p className="post-content">{content.slice(0, 100)}<Link href={`/posts/${_id}`}> ... Read More</Link></p>
             )}
           </div>
         )
